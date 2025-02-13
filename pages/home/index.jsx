@@ -19,34 +19,31 @@ function Home() {
 
   ]
 
-  return (
-
+  return ( 
     <div className='container'>
       <form>
         <h1>Cadastro de Usuários</h1>
-        <input name='name' type='text' />
-        <input name='idade' type='number' />
-        <input name='email' type='email' />
+        <input placeholder="nome" name='name' type='text' />
+        <input placeholder="idade" name='idade' type='number' />
+        <input placeholder="e-mail" name='email' type='email' />
         <button type='button'>Cadastrar</button>
       </form>
 
-
       {users.map(user => (
-        <div key={user.id}>
+        <div key={user.id} className="card">
           <div>
-            <p>Nome:{user.name}</p>
-            <p>Idade:{user.idade}</p>
-            <p>Email:{user.email}</p>
+            <p>Nome: <span>{user.name}</span> </p>
+            <p>Idade: <span> {user.idade}</span> </p>
+            <p>Email: <span> {user.email}</span> </p>
           </div>
           <button>
             <FaRegTrashAlt />
           </button>
         </div>
-
       ))}
 
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
